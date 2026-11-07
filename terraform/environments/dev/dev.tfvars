@@ -1,0 +1,13 @@
+project_id            = "optum-dev-project-id"
+environment           = "dev"
+region                = "us-central1"
+service_name          = "stateless-app"
+image                 = "us-central1-docker.pkg.dev/optum-dev-project-id/app-repo/service:latest"
+cpu                   = "1000m"
+memory                = "512Mi"
+timeout               = 120
+concurrency           = 50
+min_instances         = 0 # Scale to zero to reduce dev costs
+max_instances         = 3
+ingress_type          = "INGRESS_TRAFFIC_ALL"
+allow_unauthenticated = true # Allowed in dev for rapid testing

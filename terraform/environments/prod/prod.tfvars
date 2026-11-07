@@ -1,0 +1,13 @@
+project_id            = "optum-prod-project-id"
+environment           = "prod"
+region                = "us-central1"
+service_name          = "stateless-app"
+image                 = "us-central1-docker.pkg.dev/optum-prod-project-id/app-repo/service:v1.0.0" # Immutable pinned tag/digest
+cpu                   = "2000m"
+memory                = "1024Mi"
+timeout               = 300
+concurrency           = 80
+min_instances         = 2 # Keep warm instances for 0-cold-start latency
+max_instances         = 20
+ingress_type          = "INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER" # Locked down behind GLB
+allow_unauthenticated = false                                    # Strict authentication required

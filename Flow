@@ -1,0 +1,30 @@
+Run app manually: 
+mvn spring-boot:run
+
+Test:
+curl http://localhost:8080/health
+curl http://localhost:8080/ready
+curl http://localhost:8080/version
+
+Docker Build:
+docker build -t sample-service:v1 .
+docker run -d -p 8080:8080 --name sample-service sample-service:v1
+docker ps
+
+Test:
+curl http://localhost:8080/health
+curl http://localhost:8080/ready
+curl http://localhost:8080/version
+
+
+sudo apt install trivy or brew install trivy
+
+trivy image sample-service:v1
+trivy image sample-service:v1 > trivy-report.txt
+
+
+
+terraform fmt -recursive
+terraform validate
+terraform test
+PASS

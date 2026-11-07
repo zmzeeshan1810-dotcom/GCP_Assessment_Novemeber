@@ -1,0 +1,5 @@
+# Terraform working directory & provider binaries
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
