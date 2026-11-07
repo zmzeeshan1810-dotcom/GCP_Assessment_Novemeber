@@ -1,2 +1,0 @@
-bucket = "optum-tf-state-prod-us-central1"
-prefix = "cloud-run/stateless-app"
